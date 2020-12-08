@@ -1,3 +1,6 @@
+//This is a client program used to illustrate the functions 
+
+
 import java.util.*;
 
 
