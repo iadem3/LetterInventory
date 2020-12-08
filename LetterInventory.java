@@ -4,6 +4,9 @@ public class LetterInventory {
 	private static char[] alphabet = new char[] {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 	private int[] counter = new int[26];
 	
+	//This is the constructor that builds the LetterInventory array, fills it in, and counts the letters based on the given phrase
+	//counter array keeps count of each letter in the alphabet contained with in the phrase
+	//org actually stores the letters in alphabetial order
 	
 	public LetterInventory(String content) {
 		
@@ -24,6 +27,8 @@ public class LetterInventory {
 		
 	}
 	
+	//The method below returns the count of the given letter, throws exception if given char isnt a letter
+	
 	public int get(char letter) {
 		if(Character.isLetter(letter) == false) {
 			throw new IllegalArgumentException();
@@ -38,7 +43,7 @@ public class LetterInventory {
 		return 0;
 		
 	}
-	
+	//Changes the count of a letter in the counter array
 	public void set(Character old, int value) {
 		if((Character.isLetter(old) == false) || (value < 0)) {
 			throw new IllegalArgumentException();
@@ -55,11 +60,12 @@ public class LetterInventory {
 		
 	}
 	
-	
+	//returns length of array which is equal to the phrase's length
 	public int size() {
 		return org.length;
 	}
 	
+	//The method below checks if the given LetterInventory is empty
 	public static boolean isEmpty(LetterInventory A) {
 		if(org.length == 0) {
 			return true;
@@ -68,7 +74,7 @@ public class LetterInventory {
 		return false;
 		
 	}
-	
+	//The below method converts the LetterInventory into a string
 	public String toString() {
 		String hl = "[";
 		for(Character l : org) {
@@ -80,7 +86,7 @@ public class LetterInventory {
 	
 	
 	
-	
+	//The below method subtracts the current LetterInventory from another LetterInventory allowing for a change in the phrase
 	public LetterInventory subtract(LetterInventory old) {
 		String temp = "";
 		for(int i = 0; i < old.counter.length; i++) {
@@ -98,13 +104,7 @@ public class LetterInventory {
 		return new1;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
+	//The below method adds the current LetterInventory to another LetterInventory allowing for a change in the phrase
 	public LetterInventory add(LetterInventory old) {
 		String temp = "";
 		for(int i = 0; i < old.counter.length; i++) {
